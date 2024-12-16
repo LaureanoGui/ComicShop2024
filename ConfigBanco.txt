@@ -1,0 +1,1 @@
+Server=localhost;Port=3306;DataBase=ComicShop;Uid=root;Pwd=1234

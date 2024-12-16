@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35303.130
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ComicShop.App", "ComicShop\ComicShop.App.csproj", "{4EAEC787-6F3C-44CF-BFEB-C314BC296E4A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{AF490A31-9288-4684-946E-2DA329BFC233} = {AF490A31-9288-4684-946E-2DA329BFC233}
+		{F99DFF97-6D81-4CDE-9FB6-6137BA13E018} = {F99DFF97-6D81-4CDE-9FB6-6137BA13E018}
+		{FFB1FCE4-594A-4D1D-BBF9-26A3F7FE1409} = {FFB1FCE4-594A-4D1D-BBF9-26A3F7FE1409}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ComicShop.Domain", "ComicShop.Domain\ComicShop.Domain.csproj", "{F99DFF97-6D81-4CDE-9FB6-6137BA13E018}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ComicShop.Repository", "ComicShop.Repository\ComicShop.Repository.csproj", "{AF490A31-9288-4684-946E-2DA329BFC233}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ComicShop.Service", "ComicShop.Service\ComicShop.Service.csproj", "{FFB1FCE4-594A-4D1D-BBF9-26A3F7FE1409}"
+	ProjectSection(ProjectDependencies) = postProject
+		{AF490A31-9288-4684-946E-2DA329BFC233} = {AF490A31-9288-4684-946E-2DA329BFC233}
+		{F99DFF97-6D81-4CDE-9FB6-6137BA13E018} = {F99DFF97-6D81-4CDE-9FB6-6137BA13E018}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ComicShop.Test", "ComicShop.Test\ComicShop.Test.csproj", "{18DCF897-CBF2-4A7D-A0C1-C0114647B497}"
+	ProjectSection(ProjectDependencies) = postProject
+		{AF490A31-9288-4684-946E-2DA329BFC233} = {AF490A31-9288-4684-946E-2DA329BFC233}
+		{F99DFF97-6D81-4CDE-9FB6-6137BA13E018} = {F99DFF97-6D81-4CDE-9FB6-6137BA13E018}
+		{FFB1FCE4-594A-4D1D-BBF9-26A3F7FE1409} = {FFB1FCE4-594A-4D1D-BBF9-26A3F7FE1409}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4EAEC787-6F3C-44CF-BFEB-C314BC296E4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EAEC787-6F3C-44CF-BFEB-C314BC296E4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EAEC787-6F3C-44CF-BFEB-C314BC296E4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EAEC787-6F3C-44CF-BFEB-C314BC296E4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F99DFF97-6D81-4CDE-9FB6-6137BA13E018}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F99DFF97-6D81-4CDE-9FB6-6137BA13E018}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F99DFF97-6D81-4CDE-9FB6-6137BA13E018}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F99DFF97-6D81-4CDE-9FB6-6137BA13E018}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF490A31-9288-4684-946E-2DA329BFC233}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF490A31-9288-4684-946E-2DA329BFC233}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF490A31-9288-4684-946E-2DA329BFC233}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF490A31-9288-4684-946E-2DA329BFC233}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFB1FCE4-594A-4D1D-BBF9-26A3F7FE1409}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFB1FCE4-594A-4D1D-BBF9-26A3F7FE1409}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFB1FCE4-594A-4D1D-BBF9-26A3F7FE1409}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFB1FCE4-594A-4D1D-BBF9-26A3F7FE1409}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18DCF897-CBF2-4A7D-A0C1-C0114647B497}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18DCF897-CBF2-4A7D-A0C1-C0114647B497}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18DCF897-CBF2-4A7D-A0C1-C0114647B497}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18DCF897-CBF2-4A7D-A0C1-C0114647B497}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {13AB8F5B-26A6-476C-B566-FC6826425287}
+	EndGlobalSection
+EndGlobal
