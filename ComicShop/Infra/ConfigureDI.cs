@@ -30,7 +30,7 @@ namespace ComicShop.App.Infra
             Services = new ServiceCollection();
             #region Banco de Dados
             // Configuração do Banco na Injeção de Dependência
-            var strCon = File.ReadAllText("C:\\Users\\Win10\\source\\repos\\ComicShop\\ComicShop\\Config\\ConfigBanco.txt");
+            var strCon = File.ReadAllText("D:\\ComicShop\\ComicShop\\Config\\ConfigBanco.txt");
 
             // Lista de Serviços
             Services.AddDbContext<MySqlContext>(options =>

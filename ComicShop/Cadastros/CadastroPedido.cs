@@ -188,7 +188,7 @@ namespace ComicShop.App.Cadastros
             cboUsuario.SelectedValue = linha?.Cells["IdUsuario"].Value;
             cboCliente.SelectedValue = linha?.Cells["IdCliente"].Value;
 
-            txtDataPedido.Text = DateTime.TryParse(linha?.Cells["Data"].Value?.ToString(), out var data)
+            txtDataPedido.Text = DateTime.TryParse(linha?.Cells["DataPedido"].Value?.ToString(), out var data)
                 ? data.ToString("g")
                 : string.Empty;
 
@@ -218,6 +218,7 @@ namespace ComicShop.App.Cadastros
             source.DataSource = _itensPedido.ToArray();
             dataGridViewItens.DataSource = source;
             dataGridViewItens.Columns["Id"]!.Visible = false;
+            dataGridViewItens.Columns["IdPedido"].Visible = false;
             dataGridViewItens.Columns["IdProduto"].HeaderText = "Id.Produto";
             dataGridViewItens.Columns["PrecoUnitario"].DefaultCellStyle.Format = "C2";
             dataGridViewItens.Columns["PrecoUnitario"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -248,7 +249,7 @@ namespace ComicShop.App.Cadastros
                 }
 
                 _itensPedido.Add(itensPedido);
-                CalculaTotalVenda();
+                CalculaTotalItem();
                 CarregaGridItensVenda();
             }
         }
@@ -259,7 +260,32 @@ namespace ComicShop.App.Cadastros
             return true;
         }
 
-        private void txtPrecoUnitario_Leave(object sender, EventArgs e)
+        
+
+        private void CalculaTotalItem()
+        {
+            // Remove símbolos e formatação para converter os valores corretamente
+            if (decimal.TryParse(txtPrecoUnitario.Text, NumberStyles.Currency, CultureInfo.CurrentCulture, out var precoUnitario)
+                && int.TryParse(txtQuantidade.Text, out var quantidade))
+            {
+                // Calcula o valor total do item
+                var valorTotal = quantidade * precoUnitario;
+
+                // Exibe o valor total formatado
+                txtValorTotal.Text = valorTotal.ToString("C2", CultureInfo.CurrentCulture);
+            }
+            else
+            {
+                txtValorTotal.Text = string.Empty; // Limpa caso não consiga calcular
+            }
+        }
+
+        private void txtQuantidade_Leave(object sender, EventArgs e)
+        {
+            CalculaTotalItem(); // Recalcula o valor total ao sair do campo quantidade
+        }
+
+        private void txtValorTotal_Leave(object sender, EventArgs e)
         {
             if (decimal.TryParse(txtPrecoUnitario.Text, out var value))
             {
@@ -273,6 +299,7 @@ namespace ComicShop.App.Cadastros
             CalculaTotalItem();
         }
 
+        /*
         private void CalculaTotalItem()
         {
             var convVlr = float.TryParse(txtPrecoUnitario.Text, NumberStyles.Currency, CultureInfo.CurrentCulture.NumberFormat, out float vlUnitario);
@@ -292,6 +319,6 @@ namespace ComicShop.App.Cadastros
         private void txtQuantidade_Leave(object sender, EventArgs e)
         {
             CalculaTotalItem();
-        }
+        }*/
     }
 }

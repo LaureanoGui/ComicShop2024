@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using FluentValidation.TestHelper;
 
 namespace ComicShop.Repository.Context
 {
@@ -34,6 +35,7 @@ namespace ComicShop.Repository.Context
             modelBuilder.Entity<Categoria>(new CategoriaMap().Configure);
             modelBuilder.Entity<Produto>(new ProdutoMap().Configure);
             modelBuilder.Entity<Pedido>(new PedidoMap().Configure);
+            modelBuilder.Entity <ItensPedido>(new ItensPedidoMap().Configure);
         }
     }
 }

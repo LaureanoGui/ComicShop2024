@@ -23,7 +23,7 @@ namespace ComicShop.Repository.Mapping
             builder.HasMany(x => x.Itens).WithOne(x => x.Pedido).OnDelete(DeleteBehavior.Cascade);
         }
     }
-    public class VendaItem : IEntityTypeConfiguration<ItensPedido>
+    public class ItensPedidoMap : IEntityTypeConfiguration<ItensPedido>
     {
         public void Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<ItensPedido> builder)
         {

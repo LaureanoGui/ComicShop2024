@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroBase));
             tabControl = new ReaLTaiizor.Controls.MaterialTabControl();
             tabPageCadastro = new TabPage();
@@ -135,12 +138,32 @@
             // 
             // dgvConsulta
             // 
+            dataGridViewCellStyle1.BackColor = Color.White;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.Window;
+            dgvConsulta.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.InfoText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dgvConsulta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvConsulta.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvConsulta.Location = new Point(6, 6);
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Window;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = SystemColors.Control;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.Window;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgvConsulta.DefaultCellStyle = dataGridViewCellStyle1;
+            dgvConsulta.Location = new Point(0, 0);
             dgvConsulta.Name = "dgvConsulta";
-            dgvConsulta.Size = new Size(754, 346);
+            dgvConsulta.Size = new Size(766, 348);
             dgvConsulta.TabIndex = 3;
-            dgvConsulta.CellDoubleClick += dgvConsulta_CellDoubleClick;
             // 
             // btnExcluir
             // 
@@ -217,7 +240,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ControlDark;
+            BackColor = SystemColors.Control;
             ClientSize = new Size(780, 524);
             Controls.Add(tabControl);
             DrawerTabControl = tabControl;
@@ -242,8 +265,8 @@
         protected ReaLTaiizor.Controls.MaterialButton btnNovo;
         protected ReaLTaiizor.Controls.MaterialButton btnEditar;
         protected ReaLTaiizor.Controls.MaterialButton btnExcluir;
-        protected DataGridView dgvConsulta;
         protected TabPage tabPageCadastro;
         protected ReaLTaiizor.Controls.MaterialTabControl tabControl;
+        protected DataGridView dgvConsulta;
     }
 }

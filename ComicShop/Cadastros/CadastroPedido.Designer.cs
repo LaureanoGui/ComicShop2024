@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             txtDataPedido = new ReaLTaiizor.Controls.MaterialMaskedTextBox();
             cboUsuario = new ReaLTaiizor.Controls.MaterialComboBox();
             txtId = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
@@ -229,7 +231,17 @@
             // 
             // dataGridViewItens
             // 
+            dataGridViewCellStyle1.ForeColor = Color.Black;
+            dataGridViewItens.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewItens.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.Control;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dataGridViewItens.DefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewItens.Location = new Point(6, 71);
             dataGridViewItens.Name = "dataGridViewItens";
             dataGridViewItens.Size = new Size(718, 156);
@@ -286,6 +298,7 @@
             txtValorTotal.TextAlign = HorizontalAlignment.Left;
             txtValorTotal.TrailingIcon = null;
             txtValorTotal.UseSystemPasswordChar = false;
+            txtValorTotal.Leave += txtValorTotal_Leave;
             // 
             // txtQuantidade
             // 
