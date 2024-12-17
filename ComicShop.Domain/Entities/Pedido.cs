@@ -13,7 +13,7 @@ namespace ComicShop.Domain.Entities
         {
             Itens = new List<ItensPedido>();
         }
-        public Pedido(int id, List<ItensPedido> itens, DateTime datapedido, float valortotal,  Cliente? cliente, Usuario? usuario) : base(id)
+        public Pedido(int id, List<ItensPedido> itens, DateTime datapedido, float? valortotal,  Cliente? cliente, Usuario? usuario) : base(id)
         {
             this.DataPedido = datapedido;
             this.ValorTotal = valortotal;
@@ -21,7 +21,7 @@ namespace ComicShop.Domain.Entities
             this.Usuario = usuario;
             this.Itens = itens;
         }
-        public DateTime? DataPedido { get; set; }
+        public DateTime DataPedido { get; set; }
         public float? ValorTotal { get; set; }
         public virtual Cliente? Cliente { get; set; }
         public virtual Usuario? Usuario { get; set; }

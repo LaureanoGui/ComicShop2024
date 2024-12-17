@@ -132,7 +132,7 @@ namespace ComicShop.App.Cadastros
                 // Salva ou atualiza o pedido
                 if (IsAlteracao)
                 {
-                    _pedidoService.Update<Pedido, Pedido, PedidoValidator>(pedido);
+                    pedido = _pedidoService.Update<Pedido, Pedido, PedidoValidator>(pedido);
                 }
                 else
                 {

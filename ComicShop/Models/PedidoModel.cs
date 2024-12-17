@@ -29,7 +29,6 @@ namespace ComicShop.App.Models
         public int IdProduto { get; set; }
         public string Produto { get; set; }
         public int IdPedido { get; set; }
-        public string Pedido { get; set; }
         public int Quantidade { get; set; }
         public float PrecoUnitario { get; set; }
     }
