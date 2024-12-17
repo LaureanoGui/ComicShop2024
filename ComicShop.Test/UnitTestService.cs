@@ -201,7 +201,6 @@ namespace ComicShop.Test
             {
                 DataPedido = DateTime.Now,
                 ValorTotal = (float)(5 * produto.Preco),
-                Status = "A Enviar",
                 Cliente = cliente,
                 Usuario = usuario
             };

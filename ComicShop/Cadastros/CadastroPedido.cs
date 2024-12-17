@@ -99,30 +99,62 @@ namespace ComicShop.App.Cadastros
         {
             try
             {
+                Pedido pedido;
+
                 if (IsAlteracao)
                 {
+                    // Verifica se o ID do pedido é válido para edição
                     if (int.TryParse(txtId.Text, out var id))
                     {
-                        var pedido = _pedidoService.GetById<Pedido>(id);
-                        PreencheObjeto(pedido);
-                        pedido = _pedidoService.Update<Pedido, Pedido, PedidoValidator>(pedido);
+                        pedido = _pedidoService.GetById<Pedido>(id);
+
+                        if (pedido == null)
+                        {
+                            MessageBox.Show("Pedido não encontrado para alteração.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("ID do pedido inválido para alteração.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
                     }
                 }
                 else
                 {
-                    var pedido = new Pedido();
-                    PreencheObjeto(pedido);
+                    // Cria um novo pedido para adição
+                    pedido = new Pedido();
+                }
+
+                // Preenche o objeto pedido com os dados da interface
+                PreencheObjeto(pedido);
+
+                // Salva ou atualiza o pedido
+                if (IsAlteracao)
+                {
+                    _pedidoService.Update<Pedido, Pedido, PedidoValidator>(pedido);
+                }
+                else
+                {
                     pedido = _pedidoService.Add<Pedido, Pedido, PedidoValidator>(pedido);
+
+                    // Verifica se o ID foi gerado corretamente
+                    if (pedido.Id <= 0)
+                    {
+                        throw new Exception("Erro ao salvar o pedido: ID não gerado.");
+                    }
                 }
 
                 MessageBox.Show("Pedido salvo com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                tabControl.SelectedIndex = 1;
+                tabControl.SelectedIndex = 1; // Retorna para a aba de consulta
+                CarregaGrid(); // Atualiza o grid
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Erro ao salvar o pedido: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         protected override void Excluir(int id)
         {
