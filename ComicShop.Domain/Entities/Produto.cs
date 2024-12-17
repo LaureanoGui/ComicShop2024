@@ -24,15 +24,15 @@ namespace ComicShop.Domain.Entities
             this.Fornecedor = fornecedor;
             this.Categoria = categoria;
         }
-        public string? Nome { get; set; }
-        public string? Descricao { get; set; }
-        public int? Edicao { get; set; }
-        public float? Preco { get; set; }
-        public string? Autor { get; set; }
-        public string? Editora { get; set; }
-        public int? AnoPublicacao { get; set; }
-        public int? QuantidadeEstoque { get; set; }
-        public virtual Fornecedor? Fornecedor { get; set; }
-        public virtual Categoria? Categoria { get; set; }
+        public string Nome { get; set; }
+        public string Descricao { get; set; }
+        public int Edicao { get; set; }
+        public float Preco { get; set; }
+        public string Autor { get; set; }
+        public string Editora { get; set; }
+        public int AnoPublicacao { get; set; }
+        public int QuantidadeEstoque { get; set; }
+        public virtual Fornecedor Fornecedor { get; set; }
+        public virtual Categoria Categoria { get; set; }
     }
 }

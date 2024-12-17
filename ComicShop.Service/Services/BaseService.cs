@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using FluentValidation;
+using ComicShop;
 using ComicShop.Domain.Base;
 using Microsoft.Extensions.Options;
 

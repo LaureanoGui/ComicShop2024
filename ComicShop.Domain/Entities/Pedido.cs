@@ -44,8 +44,8 @@ namespace ComicShop.Domain.Entities
             this.Pedido = pedido;
             this.Produto = produto;
         }
-        public int? Quantidade { get; set; }
-        public float? PrecoUnitario { get; set; }
+        public int Quantidade { get; set; }
+        public float PrecoUnitario { get; set; }
         public virtual Pedido? Pedido { get; set; }
         public virtual Produto? Produto { get; set; }
     }

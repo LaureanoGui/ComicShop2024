@@ -1,4 +1,5 @@
 ﻿using ComicShop.App.Base;
+using ComicShop.App.Models;
 using ComicShop.Domain.Base;
 using ComicShop.Domain.Entities;
 using ComicShop.Service.Validators;
@@ -20,7 +21,7 @@ namespace ComicShop.App.Cadastros
         private readonly IBaseService<Produto> _produtoService;
         private readonly IBaseService<Fornecedor> _fornecedorService;
         private readonly IBaseService<Categoria> _categoriaService;
-        private List<Produto>? produtos;
+        private List<ProdutoModel>? produtos;
         #endregion
 
         #region Construtor
@@ -74,10 +75,10 @@ namespace ComicShop.App.Cadastros
         {
             cboCategoria.ValueMember = "Id";
             cboCategoria.DisplayMember = "Nome";
-            cboCategoria.DataSource = _categoriaService.Get<Categoria>().ToList();
+            cboCategoria.DataSource = _categoriaService.Get<CategoriaModel>().ToList();
             cboFornecedor.ValueMember = "Id";
             cboFornecedor.DisplayMember = "Nome";
-            cboFornecedor.DataSource = _fornecedorService.Get<Fornecedor>().ToList();
+            cboFornecedor.DataSource = _fornecedorService.Get<FornecedorModel>().ToList();
         }
         #endregion
 
@@ -123,9 +124,20 @@ namespace ComicShop.App.Cadastros
 
         protected override void CarregaGrid()
         {
-            produtos = _produtoService.Get<Produto>().ToList();
+            
+            produtos = _produtoService.Get<ProdutoModel>().ToList();
             dgvConsulta.DataSource = produtos;
-            dgvConsulta.Columns["Nome"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvConsulta.Columns["Id"].DisplayIndex = 0;
+            dgvConsulta.Columns["Nome"].DisplayIndex = 1;
+            dgvConsulta.Columns["Descricao"].DisplayIndex = 2;
+            dgvConsulta.Columns["Edicao"].DisplayIndex = 3;
+            dgvConsulta.Columns["Preco"].DisplayIndex = 4;
+            dgvConsulta.Columns["Autor"].DisplayIndex = 5;
+            dgvConsulta.Columns["Editora"].DisplayIndex = 6;
+            dgvConsulta.Columns["AnoPublicacao"].DisplayIndex = 7;
+            dgvConsulta.Columns["QuantidadeEstoque"].DisplayIndex = 8;
+
+            //dgvConsulta.Columns["Nome"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         protected override void CarregaRegistro(DataGridViewRow? linha)

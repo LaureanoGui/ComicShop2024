@@ -10,17 +10,17 @@ namespace ComicShop.App.Models
     {
         public PedidoModel()
         {
-            Items = new List<ItensPedidoModel>();
+            Itens = new List<ItensPedidoModel>();
         }
         public int Id { get; set; }
         public DateTime DataPedido { get; set; }
         public float ValorTotal { get; set; }
-        public string Status { get; set; }
+        //public string Status { get; set; }
         public int IdUsuario { get; set; }
         public string Usuario { get; set; }
         public int IdCliente { get; set; }
         public string Cliente { get; set; }
-        public List<ItensPedidoModel> Items { get; set; }
+        public List<ItensPedidoModel> Itens { get; set; }
     }
 
     public class ItensPedidoModel
@@ -31,6 +31,7 @@ namespace ComicShop.App.Models
         public int IdPedido { get; set; }
         public string Pedido { get; set; }
         public int Quantidade { get; set; }
+        public float PrecoUnitario { get; set; }
     }
 
 }

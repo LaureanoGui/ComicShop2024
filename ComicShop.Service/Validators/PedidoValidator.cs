@@ -18,9 +18,9 @@ namespace ComicShop.Service.Validators
             RuleFor(c => c.ValorTotal)
               .NotEmpty().WithMessage("Por favor, informe o valor total do pedido.")
               .NotNull().NotEmpty().WithMessage("Por favor, informe o valor total do pedido.");
-            RuleFor(c => c.Status)
+            /*RuleFor(c => c.Status)
               .NotEmpty().WithMessage("Por favor, informe o status do pedido.")
-              .NotNull().NotEmpty().WithMessage("Por favor, informe o status do pedido.");
+              .NotNull().NotEmpty().WithMessage("Por favor, informe o status do pedido.");*/
             RuleFor(c => c.Cliente)
               .NotEmpty().WithMessage("Por favor, informe o Cliente.")
               .NotNull().NotEmpty().WithMessage("Por favor, informe o Cliente.");

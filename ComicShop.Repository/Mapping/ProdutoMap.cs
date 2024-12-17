@@ -22,8 +22,14 @@ namespace ComicShop.Repository.Mapping
             builder.Property(x => x.Editora).IsRequired().HasColumnType("varchar(100)");
             builder.Property(x => x.AnoPublicacao);
             builder.Property(x => x.QuantidadeEstoque);
-            builder.HasOne(x => x.Fornecedor).WithMany().HasConstraintName("FK_Fornecedor");
-            builder.HasOne(x => x.Categoria).WithMany().HasConstraintName("FK_Categoria");
+            builder.HasOne(x => x.Fornecedor)
+                .WithMany()
+                .HasForeignKey("IdFornecedor")
+                .HasConstraintName("FK_Fornecedor");
+            builder.HasOne(x => x.Categoria)
+                .WithMany()
+                .HasForeignKey("IdCategoria")
+                .HasConstraintName("FK_Categoria");
         }
     }
 }

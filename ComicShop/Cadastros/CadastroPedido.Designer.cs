@@ -33,19 +33,19 @@
             txtId = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             cboCliente = new ReaLTaiizor.Controls.MaterialComboBox();
             gbProdutos = new GroupBox();
-            cboProduto = new ReaLTaiizor.Controls.MaterialComboBox();
-            txtPrecoUnitario = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
-            txtQuantidade = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
-            txtValorTotal = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
-            btnAdicionar = new ReaLTaiizor.Controls.MaterialButton();
-            dataGridView1 = new DataGridView();
-            labelQuantidade = new Label();
             labelValorTotal = new Label();
+            labelQuantidade = new Label();
+            dataGridViewItens = new DataGridView();
+            btnAdicionar = new ReaLTaiizor.Controls.MaterialButton();
+            txtValorTotal = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
+            txtQuantidade = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
+            txtPrecoUnitario = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
+            cboProduto = new ReaLTaiizor.Controls.MaterialComboBox();
             tabPageConsulta.SuspendLayout();
             tabPageCadastro.SuspendLayout();
             tabControl.SuspendLayout();
             gbProdutos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewItens).BeginInit();
             SuspendLayout();
             // 
             // tabPageCadastro
@@ -84,7 +84,7 @@
             txtDataPedido.InsertKeyMode = InsertKeyMode.Default;
             txtDataPedido.LeadingIcon = null;
             txtDataPedido.Location = new Point(80, 8);
-            txtDataPedido.Mask = "__/__/____";
+            txtDataPedido.Mask = "99/99/9999";
             txtDataPedido.MaxLength = 32767;
             txtDataPedido.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             txtDataPedido.Name = "txtDataPedido";
@@ -104,7 +104,7 @@
             txtDataPedido.SkipLiterals = true;
             txtDataPedido.TabIndex = 2;
             txtDataPedido.TabStop = false;
-            txtDataPedido.Text = "__/__/____";
+            txtDataPedido.Text = "  /  /";
             txtDataPedido.TextAlign = HorizontalAlignment.Left;
             txtDataPedido.TextMaskFormat = MaskFormat.IncludeLiterals;
             txtDataPedido.TrailingIcon = null;
@@ -192,7 +192,7 @@
             // 
             gbProdutos.Controls.Add(labelValorTotal);
             gbProdutos.Controls.Add(labelQuantidade);
-            gbProdutos.Controls.Add(dataGridView1);
+            gbProdutos.Controls.Add(dataGridViewItens);
             gbProdutos.Controls.Add(btnAdicionar);
             gbProdutos.Controls.Add(txtValorTotal);
             gbProdutos.Controls.Add(txtQuantidade);
@@ -205,90 +205,56 @@
             gbProdutos.TabStop = false;
             gbProdutos.Text = "Itens do Pedido";
             // 
-            // cboProduto
+            // labelValorTotal
             // 
-            cboProduto.AutoResize = false;
-            cboProduto.BackColor = Color.FromArgb(255, 255, 255);
-            cboProduto.Depth = 0;
-            cboProduto.DrawMode = DrawMode.OwnerDrawVariable;
-            cboProduto.DropDownHeight = 174;
-            cboProduto.DropDownStyle = ComboBoxStyle.DropDownList;
-            cboProduto.DropDownWidth = 121;
-            cboProduto.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
-            cboProduto.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            cboProduto.FormattingEnabled = true;
-            cboProduto.Hint = "Produto";
-            cboProduto.IntegralHeight = false;
-            cboProduto.ItemHeight = 43;
-            cboProduto.Location = new Point(6, 22);
-            cboProduto.MaxDropDownItems = 4;
-            cboProduto.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            cboProduto.Name = "cboProduto";
-            cboProduto.Size = new Size(224, 49);
-            cboProduto.StartIndex = 0;
-            cboProduto.TabIndex = 0;
+            labelValorTotal.AutoSize = true;
+            labelValorTotal.ForeColor = SystemColors.Desktop;
+            labelValorTotal.Location = new Point(622, 230);
+            labelValorTotal.Name = "labelValorTotal";
+            labelValorTotal.RightToLeft = RightToLeft.No;
+            labelValorTotal.Size = new Size(107, 15);
+            labelValorTotal.TabIndex = 7;
+            labelValorTotal.Text = "Valor Total: R$ 0,00 ";
             // 
-            // txtPrecoUnitario
+            // labelQuantidade
             // 
-            txtPrecoUnitario.AnimateReadOnly = false;
-            txtPrecoUnitario.AutoCompleteMode = AutoCompleteMode.None;
-            txtPrecoUnitario.AutoCompleteSource = AutoCompleteSource.None;
-            txtPrecoUnitario.BackgroundImageLayout = ImageLayout.None;
-            txtPrecoUnitario.CharacterCasing = CharacterCasing.Normal;
-            txtPrecoUnitario.Depth = 0;
-            txtPrecoUnitario.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            txtPrecoUnitario.HideSelection = true;
-            txtPrecoUnitario.Hint = "Preço Uniário";
-            txtPrecoUnitario.LeadingIcon = null;
-            txtPrecoUnitario.Location = new Point(250, 23);
-            txtPrecoUnitario.MaxLength = 32767;
-            txtPrecoUnitario.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            txtPrecoUnitario.Name = "txtPrecoUnitario";
-            txtPrecoUnitario.PasswordChar = '\0';
-            txtPrecoUnitario.PrefixSuffixText = null;
-            txtPrecoUnitario.ReadOnly = false;
-            txtPrecoUnitario.RightToLeft = RightToLeft.No;
-            txtPrecoUnitario.SelectedText = "";
-            txtPrecoUnitario.SelectionLength = 0;
-            txtPrecoUnitario.SelectionStart = 0;
-            txtPrecoUnitario.ShortcutsEnabled = true;
-            txtPrecoUnitario.Size = new Size(169, 48);
-            txtPrecoUnitario.TabIndex = 1;
-            txtPrecoUnitario.TabStop = false;
-            txtPrecoUnitario.TextAlign = HorizontalAlignment.Left;
-            txtPrecoUnitario.TrailingIcon = null;
-            txtPrecoUnitario.UseSystemPasswordChar = false;
+            labelQuantidade.AutoSize = true;
+            labelQuantidade.ForeColor = SystemColors.Desktop;
+            labelQuantidade.Location = new Point(11, 232);
+            labelQuantidade.Name = "labelQuantidade";
+            labelQuantidade.RightToLeft = RightToLeft.No;
+            labelQuantidade.Size = new Size(93, 15);
+            labelQuantidade.TabIndex = 6;
+            labelQuantidade.Text = "Qtd. Produtos: 0";
             // 
-            // txtQuantidade
+            // dataGridViewItens
             // 
-            txtQuantidade.AnimateReadOnly = false;
-            txtQuantidade.AutoCompleteMode = AutoCompleteMode.None;
-            txtQuantidade.AutoCompleteSource = AutoCompleteSource.None;
-            txtQuantidade.BackgroundImageLayout = ImageLayout.None;
-            txtQuantidade.CharacterCasing = CharacterCasing.Normal;
-            txtQuantidade.Depth = 0;
-            txtQuantidade.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            txtQuantidade.HideSelection = true;
-            txtQuantidade.Hint = "Qtd";
-            txtQuantidade.LeadingIcon = null;
-            txtQuantidade.Location = new Point(432, 23);
-            txtQuantidade.MaxLength = 32767;
-            txtQuantidade.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            txtQuantidade.Name = "txtQuantidade";
-            txtQuantidade.PasswordChar = '\0';
-            txtQuantidade.PrefixSuffixText = null;
-            txtQuantidade.ReadOnly = false;
-            txtQuantidade.RightToLeft = RightToLeft.No;
-            txtQuantidade.SelectedText = "";
-            txtQuantidade.SelectionLength = 0;
-            txtQuantidade.SelectionStart = 0;
-            txtQuantidade.ShortcutsEnabled = true;
-            txtQuantidade.Size = new Size(82, 48);
-            txtQuantidade.TabIndex = 2;
-            txtQuantidade.TabStop = false;
-            txtQuantidade.TextAlign = HorizontalAlignment.Left;
-            txtQuantidade.TrailingIcon = null;
-            txtQuantidade.UseSystemPasswordChar = false;
+            dataGridViewItens.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewItens.Location = new Point(6, 71);
+            dataGridViewItens.Name = "dataGridViewItens";
+            dataGridViewItens.Size = new Size(718, 156);
+            dataGridViewItens.TabIndex = 5;
+            // 
+            // btnAdicionar
+            // 
+            btnAdicionar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnAdicionar.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btnAdicionar.Depth = 0;
+            btnAdicionar.HighEmphasis = true;
+            btnAdicionar.Icon = null;
+            btnAdicionar.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
+            btnAdicionar.Location = new Point(659, 25);
+            btnAdicionar.Margin = new Padding(4, 6, 4, 6);
+            btnAdicionar.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            btnAdicionar.Name = "btnAdicionar";
+            btnAdicionar.NoAccentTextColor = Color.Empty;
+            btnAdicionar.Size = new Size(64, 36);
+            btnAdicionar.TabIndex = 4;
+            btnAdicionar.Text = "+";
+            btnAdicionar.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
+            btnAdicionar.UseAccentColor = false;
+            btnAdicionar.UseVisualStyleBackColor = true;
+            btnAdicionar.Click += btnAdicionar_Click;
             // 
             // txtValorTotal
             // 
@@ -302,7 +268,7 @@
             txtValorTotal.HideSelection = true;
             txtValorTotal.Hint = "V. Total";
             txtValorTotal.LeadingIcon = null;
-            txtValorTotal.Location = new Point(528, 23);
+            txtValorTotal.Location = new Point(539, 16);
             txtValorTotal.MaxLength = 32767;
             txtValorTotal.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             txtValorTotal.Name = "txtValorTotal";
@@ -321,55 +287,90 @@
             txtValorTotal.TrailingIcon = null;
             txtValorTotal.UseSystemPasswordChar = false;
             // 
-            // btnAdicionar
+            // txtQuantidade
             // 
-            btnAdicionar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            btnAdicionar.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
-            btnAdicionar.Depth = 0;
-            btnAdicionar.HighEmphasis = true;
-            btnAdicionar.Icon = null;
-            btnAdicionar.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnAdicionar.Location = new Point(648, 29);
-            btnAdicionar.Margin = new Padding(4, 6, 4, 6);
-            btnAdicionar.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            btnAdicionar.Name = "btnAdicionar";
-            btnAdicionar.NoAccentTextColor = Color.Empty;
-            btnAdicionar.Size = new Size(64, 36);
-            btnAdicionar.TabIndex = 4;
-            btnAdicionar.Text = "+";
-            btnAdicionar.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
-            btnAdicionar.UseAccentColor = false;
-            btnAdicionar.UseVisualStyleBackColor = true;
+            txtQuantidade.AnimateReadOnly = false;
+            txtQuantidade.AutoCompleteMode = AutoCompleteMode.None;
+            txtQuantidade.AutoCompleteSource = AutoCompleteSource.None;
+            txtQuantidade.BackgroundImageLayout = ImageLayout.None;
+            txtQuantidade.CharacterCasing = CharacterCasing.Normal;
+            txtQuantidade.Depth = 0;
+            txtQuantidade.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtQuantidade.HideSelection = true;
+            txtQuantidade.Hint = "Qtd";
+            txtQuantidade.LeadingIcon = null;
+            txtQuantidade.Location = new Point(451, 16);
+            txtQuantidade.MaxLength = 32767;
+            txtQuantidade.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            txtQuantidade.Name = "txtQuantidade";
+            txtQuantidade.PasswordChar = '\0';
+            txtQuantidade.PrefixSuffixText = null;
+            txtQuantidade.ReadOnly = false;
+            txtQuantidade.RightToLeft = RightToLeft.No;
+            txtQuantidade.SelectedText = "";
+            txtQuantidade.SelectionLength = 0;
+            txtQuantidade.SelectionStart = 0;
+            txtQuantidade.ShortcutsEnabled = true;
+            txtQuantidade.Size = new Size(82, 48);
+            txtQuantidade.TabIndex = 2;
+            txtQuantidade.TabStop = false;
+            txtQuantidade.TextAlign = HorizontalAlignment.Left;
+            txtQuantidade.TrailingIcon = null;
+            txtQuantidade.UseSystemPasswordChar = false;
             // 
-            // dataGridView1
+            // txtPrecoUnitario
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(6, 77);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(718, 150);
-            dataGridView1.TabIndex = 5;
+            txtPrecoUnitario.AnimateReadOnly = false;
+            txtPrecoUnitario.AutoCompleteMode = AutoCompleteMode.None;
+            txtPrecoUnitario.AutoCompleteSource = AutoCompleteSource.None;
+            txtPrecoUnitario.BackgroundImageLayout = ImageLayout.None;
+            txtPrecoUnitario.CharacterCasing = CharacterCasing.Normal;
+            txtPrecoUnitario.Depth = 0;
+            txtPrecoUnitario.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtPrecoUnitario.HideSelection = true;
+            txtPrecoUnitario.Hint = "Preço Unitário";
+            txtPrecoUnitario.LeadingIcon = null;
+            txtPrecoUnitario.Location = new Point(281, 16);
+            txtPrecoUnitario.MaxLength = 32767;
+            txtPrecoUnitario.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            txtPrecoUnitario.Name = "txtPrecoUnitario";
+            txtPrecoUnitario.PasswordChar = '\0';
+            txtPrecoUnitario.PrefixSuffixText = null;
+            txtPrecoUnitario.ReadOnly = false;
+            txtPrecoUnitario.RightToLeft = RightToLeft.No;
+            txtPrecoUnitario.SelectedText = "";
+            txtPrecoUnitario.SelectionLength = 0;
+            txtPrecoUnitario.SelectionStart = 0;
+            txtPrecoUnitario.ShortcutsEnabled = true;
+            txtPrecoUnitario.Size = new Size(155, 48);
+            txtPrecoUnitario.TabIndex = 1;
+            txtPrecoUnitario.TabStop = false;
+            txtPrecoUnitario.TextAlign = HorizontalAlignment.Left;
+            txtPrecoUnitario.TrailingIcon = null;
+            txtPrecoUnitario.UseSystemPasswordChar = false;
             // 
-            // labelQuantidade
+            // cboProduto
             // 
-            labelQuantidade.AutoSize = true;
-            labelQuantidade.ForeColor = SystemColors.Desktop;
-            labelQuantidade.Location = new Point(11, 232);
-            labelQuantidade.Name = "labelQuantidade";
-            labelQuantidade.RightToLeft = RightToLeft.No;
-            labelQuantidade.Size = new Size(93, 15);
-            labelQuantidade.TabIndex = 6;
-            labelQuantidade.Text = "Qtd. Produtos: 0";
-            // 
-            // labelValorTotal
-            // 
-            labelValorTotal.AutoSize = true;
-            labelValorTotal.ForeColor = SystemColors.Desktop;
-            labelValorTotal.Location = new Point(622, 230);
-            labelValorTotal.Name = "labelValorTotal";
-            labelValorTotal.RightToLeft = RightToLeft.No;
-            labelValorTotal.Size = new Size(107, 15);
-            labelValorTotal.TabIndex = 7;
-            labelValorTotal.Text = "Valor Total: R$ 0,00 ";
+            cboProduto.AutoResize = false;
+            cboProduto.BackColor = Color.FromArgb(255, 255, 255);
+            cboProduto.Depth = 0;
+            cboProduto.DrawMode = DrawMode.OwnerDrawVariable;
+            cboProduto.DropDownHeight = 174;
+            cboProduto.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboProduto.DropDownWidth = 121;
+            cboProduto.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            cboProduto.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            cboProduto.FormattingEnabled = true;
+            cboProduto.Hint = "Produto";
+            cboProduto.IntegralHeight = false;
+            cboProduto.ItemHeight = 43;
+            cboProduto.Location = new Point(11, 15);
+            cboProduto.MaxDropDownItems = 4;
+            cboProduto.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            cboProduto.Name = "cboProduto";
+            cboProduto.Size = new Size(264, 49);
+            cboProduto.StartIndex = 0;
+            cboProduto.TabIndex = 0;
             // 
             // CadastroPedido
             // 
@@ -386,7 +387,7 @@
             tabControl.ResumeLayout(false);
             gbProdutos.ResumeLayout(false);
             gbProdutos.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewItens).EndInit();
             ResumeLayout(false);
         }
 
@@ -400,7 +401,7 @@
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtPrecoUnitario;
         private ReaLTaiizor.Controls.MaterialComboBox cboProduto;
         protected Label labelQuantidade;
-        private DataGridView dataGridView1;
+        private DataGridView dataGridViewItens;
         private ReaLTaiizor.Controls.MaterialButton btnAdicionar;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtValorTotal;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtQuantidade;
