@@ -1,4 +1,4 @@
-[1 - Para testar o código, crie o Database disponibilziado abaixo]
+[1 - Para testar o código, crie o Database disponibilizado abaixo]
 [2 - Em seguida, altere no arquivo ConfigBanco.txt para a porta e senha do seu banco (Ex: Server=localhost;Port=3306;DataBase=ComicShop;Uid=root;Pwd=1234)] 
 [3 - No Diretório ComicShop/Infra altere o local de arquivo no arquivo ConfigureDI.cs (Ex: var strCon = File.ReadAllText("D:\\ComicShop\\ComicShop\\Config\\ConfigBanco.txt")];
 [4 - Por fim, basta rodar o ComicShop.App no Visual Studio. Caso ocorra algum erro, verifique as etapas acima novamente]*
